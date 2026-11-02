@@ -26,6 +26,41 @@
 
 也可以打包上传到 [WorkBuddy 开放平台](https://open.workbuddy.cn) 的技能市场。
 
+## 脚本的实际输入与能力边界
+
+本仓库包含 Skill 工作流和一个 Excel 生成脚本。命令行脚本直接接收 **JSON 题目列表**，不会自动完成 Word/OCR 到已校对题目的全过程；Word/OCR 提取、选项识别和答案校对应由前置工作流完成。
+
+安装脚本依赖：
+
+```bash
+python -m pip install openpyxl
+```
+
+准备 `questions.json`：
+
+```json
+[
+  {
+    "stem": "1 + 1 = ?",
+    "A": "1",
+    "B": "2",
+    "C": "3",
+    "D": "4",
+    "answer": "B",
+    "translation": "",
+    "explanation": "一加一等于二。"
+  }
+]
+```
+
+运行：
+
+```bash
+python scripts/build_kaoshibao_bank.py questions.json questions.xlsx
+```
+
+当前脚本输出单选题表格。2026-11-02 已用自制样例检查题型表头、题干和答案列；这不等于 OCR 正确性、考试宝现行模板兼容性或实际平台导入已经验收。导入前请核对平台模板并试导少量题目。
+
 ## 目录结构
 
 ```
