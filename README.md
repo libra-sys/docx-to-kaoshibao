@@ -1,14 +1,5 @@
 # 题库转换助手（DOCX 转考试宝）
 
-## 图文演示
-
-![自制选择题生成 Excel 题库的实际结果](docs/images/runtime-20261102.png)
-
-本例将两道自制题目的 JSON 输入交给 `scripts/build_kaoshibao_bank.py`，实际生成 XLSX，再从文件读取题干和答案列显示。截图中的展示页不是考试宝或本项目自带界面；示例副本使用了简化脚本名。
-
-此例只验证 **JSON → Excel**。Word/OCR 识别、人工校对与考试宝实际导入仍是独立步骤，不据此宣称全流程自动化已经验收。
-
-
 > WorkBuddy Skill · 作者 libra-eyes · MIT 协议
 
 ## 这是什么
